@@ -1,0 +1,9 @@
+10 PRINT "Hello, World!"
+45 LET vari = 98
+75 PRINT "GOTO"
+15 INPUT "Enter an integer: ";d$
+REM Ceci est un commentaire
+REM 75 GOTO 75
+10 PRINT "End!"
+20 END
+REM Ceci est aussi un commentaire

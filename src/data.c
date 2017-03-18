@@ -34,9 +34,9 @@ void basicLET(char* string) {
 
   char* end = (char*)malloc(sizeof(varValue));
   // Removes quote marks in case of a string
-  if (end = strrchr(varValue,'\"')) {
+  if ((end = strrchr(varValue,'\"'))) {
     int len = strlen(varValue)-strlen(end);
-    varValue[strlen(varValue)-strlen(end)] = '\0';
+    varValue[len] = '\0';
     varValue = strtok(varValue, "\"");
   }
   // Replaces \n bu \0

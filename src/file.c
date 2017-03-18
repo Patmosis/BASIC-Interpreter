@@ -35,7 +35,7 @@ void accessBasicProgram(char* argv[], int gotoValue) {
   char* rest = (char*) malloc(sizeof(buff));  // Rest of the line after code and instruction
 
   if (basicFile) {
-    while (fgets(buff, 255, (FILE*)basicFile) > 0) {
+    while (*fgets(buff, 255, (FILE*)basicFile) > 0) {
       firstWord = strtok(buff, " ");
 
       if (strstr(firstWord,"REM") == NULL) {
@@ -56,10 +56,12 @@ void accessBasicProgram(char* argv[], int gotoValue) {
               printf("\n");
             } else if (strstr(instruction, "END") != NULL) {
               // End of file reached
+              printf("\n*********************\n");
               printf("%d variables\n", variableNumber);
               for (int i=0;i<variableNumber;i++) {
                 printf("%s = %s\n", variablesNames[i], variablesValues[i]);
               }
+              printf("*********************\n");
 
               // Frees memory
               free(rest);

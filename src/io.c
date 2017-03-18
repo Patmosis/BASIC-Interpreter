@@ -23,7 +23,7 @@ void basicPRINT(char* string) {
   // Next lines suppress quote marks in new string "printed"
   char* end = strrchr(printed,'\"');
   int len = strlen(printed)-strlen(end);
-  printed[strlen(printed)-strlen(end)] = '\0';
+  printed[len] = '\0';
   printed = strtok(printed, "\"");
 
   // Finally prints string
